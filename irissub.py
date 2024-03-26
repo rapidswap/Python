@@ -1,4 +1,4 @@
-mport pandas as pd
+import pandas as pd
 
 # URL에서 데이터 다운로드
 iris_data = pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data", header=None)
