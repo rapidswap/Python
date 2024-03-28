@@ -7,12 +7,5 @@ for i in range(a):
     mean.append(num1)
     mean.append(num2)
 for j in range(a):
-    print(mean[k],mean[k+1])
+    print("Case #%d:"%(j+1),mean[k]+mean[k+1])
     k+=2
-
-
-
-
-
-
-    
