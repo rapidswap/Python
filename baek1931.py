@@ -7,7 +7,6 @@ for i in range(num):
 
 room.sort()  # 시작 시간을 기준으로 정렬
 
-maximum = 0
 cnt = 0
 end_time = 0
 
@@ -18,6 +17,5 @@ for start_time, new_end_time in room:
     elif new_end_time < end_time:  # 이전 회의 종료 시간보다 새로운 회의 종료 시간이 작을 때
         end_time = new_end_time
 
-maximum = max(maximum, cnt)
 
-print(maximum)
+print(cnt)
