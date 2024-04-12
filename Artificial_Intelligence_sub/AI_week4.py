@@ -5,6 +5,7 @@ import numpy as np
 
 up=0.0
 down=0.0
+#iris data의 분류를 위한 리스트 선언
 tmp_list=[]
 all_avg_list=[]
 all_var_list=[]
@@ -17,7 +18,7 @@ versicolor_var_list=[]
 virginica_avg_list=[]
 virginica_tmp=[]
 virginica_var_list=[]
-
+#iris data의 분류를 하되 30개씩 분류해서 정리한 리스트
 setosa30_avg_list=[]
 setosa30_var_list=[]
 versicolor30_avg_list=[]
@@ -25,6 +26,7 @@ versicolor30_var_list=[]
 virginica30_avg_list=[]
 virginica30_var_list=[]
 sum=0.0
+
 # URL에서 데이터 다운로드
 iris_data = pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data", header=None)
 
@@ -34,8 +36,8 @@ iris_data.columns = ["sepal_length", "sepal_width", "petal_length", "petal_width
 # NumPy 배열로 변환
 iris_matrix = iris_data.values
 
-# 결과 출력
 
+#iris data의 모든 데이터 평균 분산 구하는 for문
 for i in range(len(iris_matrix[0])-1):
     for j in range(len(iris_matrix)):
         sum += float(iris_matrix[j][i])
@@ -44,7 +46,7 @@ for i in range(len(iris_matrix[0])-1):
     all_var_list.append(round(numpy.var(tmp_list),2))
     sum=0.0
     tmp_list=[]
-
+#setosa에 대한 평균 분산
 for i in range(len(iris_matrix[0])-1):
     for j in range(0,50):
         sum += float(iris_matrix[j][i])
@@ -53,7 +55,7 @@ for i in range(len(iris_matrix[0])-1):
     setosa_var_list.append(round(numpy.var(setosa_tmp),2))
     setosa_tmp=[]
     sum=0.0
-
+#setosa 30개의 평균 분산
 for i in range(len(iris_matrix[0])-1):
     for j in range(0,30):
         sum += float(iris_matrix[j][i])
@@ -62,7 +64,7 @@ for i in range(len(iris_matrix[0])-1):
     setosa30_var_list.append(round(numpy.var(setosa_tmp),2))
     setosa_tmp=[]
     sum=0.0
-
+#versicolor에 대한 평균 분산
 for i in range(len(iris_matrix[0])-1):
     for j in range(50,100):
         sum += float(iris_matrix[j][i])
@@ -71,7 +73,7 @@ for i in range(len(iris_matrix[0])-1):
     versicolor_var_list.append(round(numpy.var(versicolor_tmp),2))
     sum=0.0
     versicolor_tmp=[]
-
+#versicolor 30개의 평균 분산
 for i in range(len(iris_matrix[0])-1):
     for j in range(50,80):
         sum += float(iris_matrix[j][i])
@@ -80,7 +82,7 @@ for i in range(len(iris_matrix[0])-1):
     versicolor30_var_list.append(round(numpy.var(versicolor_tmp),2))
     sum=0.0
     versicolor_tmp=[]
-
+#virginica에 대한 평균 분산
 for i in range(len(iris_matrix[0])-1):
     for j in range(100,150):
         sum += float(iris_matrix[j][i])
@@ -89,7 +91,7 @@ for i in range(len(iris_matrix[0])-1):
     virginica_var_list.append(round(numpy.var(virginica_tmp),2))
     sum=0.0
     virginica_tmp=[]
-
+#virginica 30개의 평균 분산
 for i in range(len(iris_matrix[0])-1):
     for j in range(100,130):
         sum += float(iris_matrix[j][i])
