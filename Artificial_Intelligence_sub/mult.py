@@ -1,19 +1,16 @@
-mult1=[[1,2,3,4],[5,6,7,8],[9,10,11,12]]
-mult2=[[1,2],[3,4],[5,6],[7,8]]
-tmpmult=[]
-matrixnum=0
+#행렬 곱셈 함수
+import numpy as np
 
-if len(mult1[0]) == len(mult2):
-    newmult = [[0] * len(mult2[0]) for _ in range(len(mult1))]
-    
-    for n in range(len(mult2[0])):
-        for i in range(len(mult1)):
-            for j in range(len(mult1[0])):
-                matrixnum = matrixnum + (mult1[i][j] * mult2[j][n])
-                if j == 3:
-                    newmult[i][n]=matrixnum
-                    matrixnum=0
-        
-print(newmult)
+A = np.array([[2,3,7],[5,2,1],[0,1,0]])
+B = np.array([[1,2],[2,7],[3,0]])
 
+def mtx_mul(A, ar, ac, B, br, bc):
+    newmult = np.zeros((ar, bc))
+    for i in range(ar):
+        for j in range(bc):
+            for k in range(ac):
+                newmult[i][j] += A[i][k] * B[k][j]
+    return newmult
 
+C = mtx_mul(A, 3, 3, B, 3, 2)
+print(C)
