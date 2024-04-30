@@ -4,19 +4,19 @@ if N % 2 == 0 :
 Candy=[]
 Com_Candy=[]
 cnt=0
+
 for i in range(N):
     A = input()
     Candy.append(int(A))
 
 first_Candy=0
 
-for val in Candy:
+for vlaue in Candy:
     if cnt % 2 == 0:
-        first_Candy += val
+        first_Candy += vlaue
     else:
-        first_Candy -= val
+        first_Candy -= vlaue
     cnt+=1
-print(first_Candy)
         
 Com_Candy.append(first_Candy//2)
 
