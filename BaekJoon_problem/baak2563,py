@@ -1,0 +1,42 @@
+N = int(input())
+paperN=N*100
+paper=[list(map(int,input().split())) for _ in range(N)]
+NN=0
+A_X=0
+A_Y=0
+for i in range(N):
+    for j in range(i+1,N):
+        if paper[i] == paper[j]:
+            paperN-=100
+        
+        if paper[i][0]<=paper[j][0]:
+            if paper[i][0]+10 > paper[j][0]:
+                A_X = (paper[i][0]+10) - paper[j][0]
+                
+            if paper[i][1] > paper[j][1]:
+                if paper[j][1]+10 > paper[i][1]:
+                    A_Y = (paper[j][1]+10) - paper[i][1]
+            elif paper[i][1] < paper[j][1]:
+                if paper[i][1]+10 > paper[j][1]:
+                    A_Y = (paper[i][1]+10) - paper[j][1]
+            elif paper[i][1] == paper[j][1]:
+                A_Y=10
+                
+        elif paper[i][0]>=paper[j][0]:
+            if paper[j][0]+10> paper[i][0]:
+                A_X = (paper[j][0]+10) - paper[i][0]
+
+            if paper[i][1] > paper[j][1]:
+                if paper[j][1]+10 > paper[i][1]:
+                    A_Y = (paper[j][1]+10) - paper[i][1]
+            elif paper[i][1] < paper[j][1]:
+                if paper[i][1]+10 > paper[j][1]:
+                    A_Y = (paper[i][1]+10) - paper[j][1]
+            elif paper[i][1] == paper[j][1]:
+                A_Y=10
+        print("AX=",A_X)
+        print("AY=",A_Y)
+        NN+=A_X*A_Y
+        A_X=0
+        A_Y=0
+print(paperN - NN)
