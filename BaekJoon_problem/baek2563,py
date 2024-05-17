@@ -1,0 +1,16 @@
+N = int(input())
+paper=[[0]*100 for i in range(100)]
+sum_arr=0
+for i in range(N):
+    x, y = map(int, input().split())
+    for j in range(x, x+10):
+        index_X=j
+        for k in range(y, y+10):
+            index_Y=k
+            if paper[index_X][index_Y] == 0:
+                paper[index_X][index_Y] = 1
+
+for i in range(100):
+    sum_arr+=sum(paper[i])
+
+print(sum_arr)
