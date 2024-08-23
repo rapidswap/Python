@@ -24,3 +24,4 @@ F=dist(A,C,4,4)
 print(D)
 print(E)
 print(F)
+ 
