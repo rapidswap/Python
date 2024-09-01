@@ -2,7 +2,7 @@ import requests
 import xml.etree.ElementTree as ET
 import matplotlib.pyplot as plt
 import numpy as np
-
+ 
 # API 요청
 url = 'http://apis.data.go.kr/1220000/nitemtrade/getNitemtradeList'
 params = {
