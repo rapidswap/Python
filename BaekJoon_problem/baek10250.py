@@ -1,5 +1,5 @@
 Hotel=int(input())
-
+ 
 rows=0
 cols=1
 rooms=[]
